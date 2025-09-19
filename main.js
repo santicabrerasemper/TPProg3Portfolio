@@ -52,30 +52,66 @@ $$('main section[id]').forEach(sec => io.observe(sec));
 
 $('#year')?.append(new Date().getFullYear());
 
-
 const form = $('#contactForm');
-form?.addEventListener('submit', e => {
+
+const MSG = {
+  name:        'Decime tu nombre.',
+  email:       'Necesito un email válido para poder responderte.',
+  phone:       '', 
+  projectType: 'Elegí el tipo de proyecto.',
+  timeline:    'Indicá el plazo estimado.',
+  budget:      'Seleccioná un rango de presupuesto.',
+  ref:         '', 
+  message:     'Contame brevemente tu idea o necesidad.'
+};
+
+Object.keys(MSG).forEach(id => {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+
+  el.addEventListener('invalid', (ev) => {
+    ev.preventDefault();                 
+    el.setCustomValidity(MSG[id] || '');
+    el.reportValidity();                 
+  });
+
+  const clear = () => el.setCustomValidity('');
+  el.addEventListener('input', clear);
+  el.addEventListener('change', clear);
+
+  if (id === 'email') {
+    el.addEventListener('input', () => {
+      el.setCustomValidity('');
+      if (el.value && el.validity.typeMismatch) {
+        el.setCustomValidity('El email no parece válido (ej: nombre@dominio.com).');
+      }
+    });
+  }
+});
+
+form?.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const val = id => ($('#' + id)?.value || '').trim();
-  const name = val('name');
-  const email = val('email');
-  const phone = val('phone');             
-  const projectType = val('projectType');
-  const timeline = val('timeline');
-  const budget = val('budget');
-  const ref = val('ref');                  
-  const message = val('message');
-
-  if (!name || !email || !projectType || !timeline || !budget || !message) {
-    alert('Completá los campos obligatorios.');
+  if (!form.checkValidity()) {
+    form.reportValidity();
     return;
   }
 
-  const to = 'santicabrerasemper8@gmail.com'; 
+  const val = id => ($('#' + id)?.value || '').trim();
+  const name        = val('name');
+  const email       = val('email');
+  const phone       = val('phone');       
+  const projectType = val('projectType');
+  const timeline    = val('timeline');
+  const budget      = val('budget');
+  const ref         = val('ref');         
+  const message     = val('message');
+
+  const to = 'santicabrerasemper8@gmail.com';   
   const subject = encodeURIComponent(`Consulta Android • ${name}`);
 
-  const bodyLines = [
+  const body = encodeURIComponent([
     `Nombre: ${name}`,
     `Email: ${email}`,
     phone ? `Teléfono: ${phone}` : null,
@@ -86,10 +122,12 @@ form?.addEventListener('submit', e => {
     '',
     'Mensaje:',
     message
-  ].filter(Boolean);
+  ].filter(Boolean).join('\n'));
 
-  const body = encodeURIComponent(bodyLines.join('\n'));
   window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-
   form.reset();
 });
+
+
+
+
