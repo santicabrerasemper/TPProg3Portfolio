@@ -1,6 +1,6 @@
 
-const $ = (s, root=document) => root.querySelector(s);
-const $$ = (s, root=document) => [...root.querySelectorAll(s)];
+const $ = (s, root = document) => root.querySelector(s);
+const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 
 
 const themeBtn = $('#themeBtn');
@@ -55,14 +55,14 @@ $('#year')?.append(new Date().getFullYear());
 const form = $('#contactForm');
 
 const MSG = {
-  name:        'Decime tu nombre.',
-  email:       'Necesito un email válido para poder responderte.',
-  phone:       '', 
+  name: 'Decime tu nombre.',
+  email: 'Necesito un email válido para poder responderte.',
+  phone: '',
   projectType: 'Elegí el tipo de proyecto.',
-  timeline:    'Indicá el plazo estimado.',
-  budget:      'Seleccioná un rango de presupuesto.',
-  ref:         '', 
-  message:     'Contame brevemente tu idea o necesidad.'
+  timeline: 'Indicá el plazo estimado.',
+  budget: 'Seleccioná un rango de presupuesto.',
+  ref: '',
+  message: 'Contame brevemente tu idea o necesidad.'
 };
 
 Object.keys(MSG).forEach(id => {
@@ -71,9 +71,9 @@ Object.keys(MSG).forEach(id => {
 
 
   el.addEventListener('invalid', (ev) => {
-    ev.preventDefault();                 
+    ev.preventDefault();
     el.setCustomValidity(MSG[id] || '');
-    el.reportValidity();                 
+    el.reportValidity();
   });
 
   const clear = () => el.setCustomValidity('');
@@ -99,16 +99,16 @@ form?.addEventListener('submit', (e) => {
   }
 
   const val = id => ($('#' + id)?.value || '').trim();
-  const name        = val('name');
-  const email       = val('email');
-  const phone       = val('phone');       
+  const name = val('name');
+  const email = val('email');
+  const phone = val('phone');
   const projectType = val('projectType');
-  const timeline    = val('timeline');
-  const budget      = val('budget');
-  const ref         = val('ref');         
-  const message     = val('message');
+  const timeline = val('timeline');
+  const budget = val('budget');
+  const ref = val('ref');
+  const message = val('message');
 
-  const to = 'santicabrerasemper8@gmail.com';   
+  const to = 'santicabrerasemper8@gmail.com';
   const subject = encodeURIComponent(`Consulta Android • ${name}`);
 
   const body = encodeURIComponent([

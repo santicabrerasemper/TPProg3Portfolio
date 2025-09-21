@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="auto">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,13 +8,16 @@
   <meta name="description" content="Portfolio personal - Unidad 6" />
   <link rel="stylesheet" href="estilos.css" />
 </head>
+
 <body>
   <header id="site-header">
     <div id="site-nav" class="container nav" role="navigation" aria-label="Principal">
       <a class="brand" href="#inicio" aria-label="Ir a inicio"><span class="dot"></span> <span>Mi Portfolio</span></a>
       <nav>
         <button class="icon-btn menu-toggle" aria-label="Abrir menú" title="Menú" id="menuToggle" aria-expanded="false">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
         </button>
         <ul id="navLinks">
           <li><a href="#inicio" class="active">Inicio</a></li>
@@ -25,7 +29,11 @@
       </nav>
       <div class="nav-actions">
         <button class="icon-btn" id="themeBtn" aria-label="Cambiar tema" title="Cambiar tema">
-          <svg id="themeIcon" viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1Zm6.364 2.636a1 1 0 0 1 0 1.414l-.707.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0ZM21 13a1 1 0 1 0 0-2h-1a1 1 0 1 0 0 2h1ZM6.757 6.757A1 1 0 0 1 8.17 8.17l-.707.707A1 1 0 1 1 6.05 7.464l.707-.707ZM12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm-1 2v1a1 1 0 1 0 2 0v-1a1 1 0 1 0-2 0ZM4 13a1 1 0 1 0 0-2H3a1 1 0 1 0 0 2h1Zm1.636 6.364a1 1 0 0 1 1.414 0l.707.707A1 1 0 0 1 6.343 21.9l-.707-.707a1 1 0 0 1 0-1.414Zm12.728 0a1 1 0 0 1 0 1.414l-.707.707A1 1 0 0 1 16.95 20.9l.707-.707a1 1 0 0 1 1.414 0Z" stroke="currentColor" stroke-width="1.5"/></svg>
+          <svg id="themeIcon" viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <path
+              d="M12 3a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1Zm6.364 2.636a1 1 0 0 1 0 1.414l-.707.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0ZM21 13a1 1 0 1 0 0-2h-1a1 1 0 1 0 0 2h1ZM6.757 6.757A1 1 0 0 1 8.17 8.17l-.707.707A1 1 0 1 1 6.05 7.464l.707-.707ZM12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm-1 2v1a1 1 0 1 0 2 0v-1a1 1 0 1 0-2 0ZM4 13a1 1 0 1 0 0-2H3a1 1 0 1 0 0 2h1Zm1.636 6.364a1 1 0 0 1 1.414 0l.707.707A1 1 0 0 1 6.343 21.9l-.707-.707a1 1 0 0 1 0-1.414Zm12.728 0a1 1 0 0 1 0 1.414l-.707.707A1 1 0 0 1 16.95 20.9l.707-.707a1 1 0 0 1 1.414 0Z"
+              stroke="currentColor" stroke-width="1.5" />
+          </svg>
         </button>
       </div>
     </div>
@@ -41,7 +49,9 @@
             <span class="badge">Jetpack Compose</span>
           </div>
           <h1>Hola! Soy <span style="color:var(--primary)">Santiago</span> 👋</h1>
-          <p class="lead">Diseño y desarrollo <strong>apps Android nativas</strong> con Kotlin y Jetpack (Compose, Navigation, Room), enfocadas en <strong>rendimiento</strong>, <strong>accesibilidad</strong> y una <strong>UX</strong> consistente con Material 3.</p>
+          <p class="lead">Diseño y desarrollo <strong>apps Android nativas</strong> con Kotlin y Jetpack (Compose,
+            Navigation, Room), enfocadas en <strong>rendimiento</strong>, <strong>accesibilidad</strong> y una
+            <strong>UX</strong> consistente con Material 3.</p>
           <div style="display:flex; gap:.6rem; margin-top:1rem">
             <a class="btn primary" href="#redes">Ver redes</a>
             <a class="btn" href="#contacto">Contactarme</a>
@@ -56,13 +66,14 @@
       </div>
     </section>
 
-   
+
     <section id="sobre-mi" class="section">
       <div class="container about">
         <div class="info-card">
           <h2>Información general</h2>
           <p>Soy <strong>desarrollador Android</strong> orientado a resultados. Me gusta convertir requerimientos en
-        pantallas sólidas y mantenibles, aplicando buenas prácticas de arquitectura y cuidando los detalles de UI.</p>
+            pantallas sólidas y mantenibles, aplicando buenas prácticas de arquitectura y cuidando los detalles de UI.
+          </p>
           <div class="info-grid" role="list">
             <div><span class="muted">Nombre</span><br><strong>Santiago Cabrera</strong></div>
             <div><span class="muted">Ubicación</span><br><strong>Buenos Aires, Argentina</strong></div>
@@ -73,87 +84,87 @@
         <div class="info-card">
           <h2>Lo que me diferencia</h2>
           <ul>
-        <li><strong>Arquitectura limpia</strong>: MVVM + Use Cases, módulos y capas claras.</li>
-        <li><strong>Jetpack</strong>: Compose, Navigation, Room, DataStore, WorkManager.</li>
-        <li><strong>Asincronismo moderno</strong>: Coroutines & Flow; manejo de estados.</li>
-        <li><strong>Calidad</strong>: tests unitarios e instrumentados (JUnit, Mockito, Espresso).</li>
-        <li><strong>Red y datos</strong>: Retrofit/Ktor, manejo de errores y caché.</li>
-        <li><strong>Entrega</strong>: CI/CD con GitHub Actions y publicación en Play Console (tracks).</li>
+            <li><strong>Arquitectura limpia</strong>: MVVM + Use Cases, módulos y capas claras.</li>
+            <li><strong>Jetpack</strong>: Compose, Navigation, Room, DataStore, WorkManager.</li>
+            <li><strong>Asincronismo moderno</strong>: Coroutines & Flow; manejo de estados.</li>
+            <li><strong>Calidad</strong>: tests unitarios e instrumentados (JUnit, Mockito, Espresso).</li>
+            <li><strong>Red y datos</strong>: Retrofit/Ktor, manejo de errores y caché.</li>
+            <li><strong>Entrega</strong>: CI/CD con GitHub Actions y publicación en Play Console (tracks).</li>
           </ul>
         </div>
       </div>
     </section>
 
-   
+
     <section id="conocimientos" class="section">
-  <div class="container">
-    <h2>Conocimientos</h2>
-    <p class="lead">Tecnologías y herramientas que uso para crear apps Android de punta a punta.</p>
+      <div class="container">
+        <h2>Conocimientos</h2>
+        <p class="lead">Tecnologías y herramientas que uso para crear apps Android de punta a punta.</p>
 
-    <div class="skills">
-      <div class="skill">
-        <h3>Kotlin</h3>
-        <div class="bar"><i style="--val:88%"></i></div>
-        <div>
-          <span class="pill">Coroutines</span>
-          <span class="pill">Flow</span>
-          <span class="pill">Extensions</span>
+        <div class="skills">
+          <div class="skill">
+            <h3>Kotlin</h3>
+            <div class="bar"><i style="--val:88%"></i></div>
+            <div>
+              <span class="pill">Coroutines</span>
+              <span class="pill">Flow</span>
+              <span class="pill">Extensions</span>
+            </div>
+          </div>
+
+          <div class="skill">
+            <h3>Android SDK & Jetpack</h3>
+            <div class="bar"><i style="--val:84%"></i></div>
+            <div>
+              <span class="pill">Navigation</span>
+              <span class="pill">Room</span>
+              <span class="pill">DataStore</span>
+            </div>
+          </div>
+
+          <div class="skill">
+            <h3>Jetpack Compose</h3>
+            <div class="bar"><i style="--val:82%"></i></div>
+            <div>
+              <span class="pill">Material 3</span>
+              <span class="pill">State</span>
+              <span class="pill">Theming</span>
+            </div>
+          </div>
+
+          <div class="skill">
+            <h3>Arquitectura</h3>
+            <div class="bar"><i style="--val:78%"></i></div>
+            <div>
+              <span class="pill">MVVM</span>
+              <span class="pill">Clean</span>
+              <span class="pill">DI (Hilt/Koin)</span>
+            </div>
+          </div>
+
+          <div class="skill">
+            <h3>Red & Persistencia</h3>
+            <div class="bar"><i style="--val:76%"></i></div>
+            <div>
+              <span class="pill">Retrofit/Ktor</span>
+              <span class="pill">Room</span>
+              <span class="pill">Caching</span>
+            </div>
+          </div>
+
+          <div class="skill">
+            <h3>Testing & CI/CD</h3>
+            <div class="bar"><i style="--val:72%"></i></div>
+            <div>
+              <span class="pill">JUnit</span>
+              <span class="pill">Mockito</span>
+              <span class="pill">Espresso</span>
+              <span class="pill">GitHub Actions</span>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="skill">
-        <h3>Android SDK & Jetpack</h3>
-        <div class="bar"><i style="--val:84%"></i></div>
-        <div>
-          <span class="pill">Navigation</span>
-          <span class="pill">Room</span>
-          <span class="pill">DataStore</span>
-        </div>
-      </div>
-
-      <div class="skill">
-        <h3>Jetpack Compose</h3>
-        <div class="bar"><i style="--val:82%"></i></div>
-        <div>
-          <span class="pill">Material 3</span>
-          <span class="pill">State</span>
-          <span class="pill">Theming</span>
-        </div>
-      </div>
-
-      <div class="skill">
-        <h3>Arquitectura</h3>
-        <div class="bar"><i style="--val:78%"></i></div>
-        <div>
-          <span class="pill">MVVM</span>
-          <span class="pill">Clean</span>
-          <span class="pill">DI (Hilt/Koin)</span>
-        </div>
-      </div>
-
-      <div class="skill">
-        <h3>Red & Persistencia</h3>
-        <div class="bar"><i style="--val:76%"></i></div>
-        <div>
-          <span class="pill">Retrofit/Ktor</span>
-          <span class="pill">Room</span>
-          <span class="pill">Caching</span>
-        </div>
-      </div>
-
-      <div class="skill">
-        <h3>Testing & CI/CD</h3>
-        <div class="bar"><i style="--val:72%"></i></div>
-        <div>
-          <span class="pill">JUnit</span>
-          <span class="pill">Mockito</span>
-          <span class="pill">Espresso</span>
-          <span class="pill">GitHub Actions</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <section id="redes" class="section">
@@ -161,12 +172,22 @@
         <h2>Redes</h2>
         <p class="lead">Encontrame en estas plataformas.</p>
         <div class="socials">
-          <a class="social" href="https://github.com/santicabrerasemper" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2c-3.22.7-3.9-1.39-3.9-1.39-.53-1.35-1.29-1.71-1.29-1.71-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.26 3.4.96.11-.76.41-1.26.74-1.55-2.57-.29-5.28-1.29-5.28-5.75 0-1.27.46-2.31 1.2-3.12-.12-.29-.52-1.46.11-3.05 0 0 .98-.31 3.21 1.19a11.1 11.1 0 0 1 5.84 0c2.23-1.5 3.2-1.19 3.2-1.19.64 1.59.24 2.76.12 3.05.75.81 1.2 1.85 1.2 3.12 0 4.47-2.72 5.45-5.31 5.74.42.36.8 1.08.8 2.18v3.24c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z" stroke="currentColor"/></svg>
+          <a class="social" href="https://github.com/santicabrerasemper" target="_blank" rel="noreferrer noopener"
+            aria-label="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2c-3.22.7-3.9-1.39-3.9-1.39-.53-1.35-1.29-1.71-1.29-1.71-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.26 3.4.96.11-.76.41-1.26.74-1.55-2.57-.29-5.28-1.29-5.28-5.75 0-1.27.46-2.31 1.2-3.12-.12-.29-.52-1.46.11-3.05 0 0 .98-.31 3.21 1.19a11.1 11.1 0 0 1 5.84 0c2.23-1.5 3.2-1.19 3.2-1.19.64 1.59.24 2.76.12 3.05.75.81 1.2 1.85 1.2 3.12 0 4.47-2.72 5.45-5.31 5.74.42.36.8 1.08.8 2.18v3.24c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z"
+                stroke="currentColor" />
+            </svg>
             <span>GitHub</span>
           </a>
-          <a class="social" href="https://www.linkedin.com/in/santiagocabrera1/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 8.75h3.96V21H3V8.75Zm6.54 0H13.3v1.67h.05c.6-1.06 2.06-2.17 4.24-2.17 4.54 0 5.38 2.99 5.38 6.88V21H19v-5.37c0-1.28-.02-2.92-1.78-2.92-1.79 0-2.06 1.4-2.06 2.83V21h-3.96V8.75Z" stroke="currentColor"/></svg>
+          <a class="social" href="https://www.linkedin.com/in/santiagocabrera1/" target="_blank"
+            rel="noreferrer noopener" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 8.75h3.96V21H3V8.75Zm6.54 0H13.3v1.67h.05c.6-1.06 2.06-2.17 4.24-2.17 4.54 0 5.38 2.99 5.38 6.88V21H19v-5.37c0-1.28-.02-2.92-1.78-2.92-1.79 0-2.06 1.4-2.06 2.83V21h-3.96V8.75Z"
+                stroke="currentColor" />
+            </svg>
             <span>LinkedIn</span>
           </a>
           </a>
@@ -174,89 +195,91 @@
       </div>
     </section>
 
-<section id="contacto" class="section">
-  <div class="container contact">
-    <div>
-      <h2>Contacto</h2>
-      <p class="lead">¿Querés crear o mejorar una <strong>app Android</strong>? Contame un poco y te respondo.</p>
-
-      <form id="contactForm" novalidate>
+    <section id="contacto" class="section">
+      <div class="container contact">
         <div>
-          <label for="name">Nombre</label>
-          <input id="name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required>
+          <h2>Contacto</h2>
+          <p class="lead">¿Querés crear o mejorar una <strong>app Android</strong>? Contame un poco y te respondo.</p>
+
+          <form id="contactForm" novalidate>
+            <div>
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required>
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required>
+              <div class="hint">Solo lo usaré para responder tu consulta.</div>
+            </div>
+
+            <div>
+              <label for="phone">Teléfono (opcional)</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+54 9 11 1234 5678">
+            </div>
+
+            <div>
+              <label for="projectType">Tipo de proyecto</label>
+              <select id="projectType" name="projectType" required>
+                <option value="" selected disabled>Seleccioná una opción</option>
+                <option>Nueva app Android</option>
+                <option>Mejora/feature de app existente</option>
+                <option>Mantenimiento/soporte</option>
+                <option>Prototipo/MVP</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="timeline">Plazo estimado</label>
+              <select id="timeline" name="timeline" required>
+                <option value="" selected disabled>Seleccioná un plazo</option>
+                <option>1–2 meses</option>
+                <option>3–6 meses</option>
+                <option>6+ meses</option>
+                <option>A explorar</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="budget">Presupuesto (aprox.)</label>
+              <select id="budget" name="budget" required>
+                <option value="" selected disabled>Seleccioná un rango</option>
+                <option>USD 1k–3k</option>
+                <option>USD 3k–8k</option>
+                <option>USD 8k–15k</option>
+                <option>USD 15k+</option>
+              </select>
+              <div class="hint">Esto solo orienta el alcance y la propuesta.</div>
+            </div>
+
+            <div>
+              <label for="ref">Referencia (Play Store / repo / enlace) — opcional</label>
+              <input id="ref" name="ref" type="url" inputmode="url"
+                placeholder="https://play.google.com/... o https://github.com/...">
+            </div>
+
+            <div>
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message"
+                placeholder="Contame el objetivo de la app, usuarios, features clave, etc." required></textarea>
+            </div>
+
+            <div style="display:flex; gap:.6rem; align-items:center; flex-wrap:wrap">
+              <button type="submit" class="btn primary">Enviar</button>
+              <span class="hint">Se abrirá tu cliente de correo con un borrador prellenado.</span>
+            </div>
+          </form>
         </div>
 
-        <div>
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required>
-          <div class="hint">Solo lo usaré para responder tu consulta.</div>
-        </div>
-
-        <div>
-          <label for="phone">Teléfono (opcional)</label>
-          <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+54 9 11 1234 5678">
-        </div>
-
-        <div>
-          <label for="projectType">Tipo de proyecto</label>
-          <select id="projectType" name="projectType" required>
-            <option value="" selected disabled>Seleccioná una opción</option>
-            <option>Nueva app Android</option>
-            <option>Mejora/feature de app existente</option>
-            <option>Mantenimiento/soporte</option>
-            <option>Prototipo/MVP</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="timeline">Plazo estimado</label>
-          <select id="timeline" name="timeline" required>
-            <option value="" selected disabled>Seleccioná un plazo</option>
-            <option>1–2 meses</option>
-            <option>3–6 meses</option>
-            <option>6+ meses</option>
-            <option>A explorar</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="budget">Presupuesto (aprox.)</label>
-          <select id="budget" name="budget" required>
-            <option value="" selected disabled>Seleccioná un rango</option>
-            <option>USD 1k–3k</option>
-            <option>USD 3k–8k</option>
-            <option>USD 8k–15k</option>
-            <option>USD 15k+</option>
-          </select>
-          <div class="hint">Esto solo orienta el alcance y la propuesta.</div>
-        </div>
-
-        <div>
-          <label for="ref">Referencia (Play Store / repo / enlace) — opcional</label>
-          <input id="ref" name="ref" type="url" inputmode="url" placeholder="https://play.google.com/... o https://github.com/...">
-        </div>
-
-        <div>
-          <label for="message">Mensaje</label>
-          <textarea id="message" name="message" placeholder="Contame el objetivo de la app, usuarios, features clave, etc." required></textarea>
-        </div>
-
-        <div style="display:flex; gap:.6rem; align-items:center; flex-wrap:wrap">
-          <button type="submit" class="btn primary">Enviar</button>
-          <span class="hint">Se abrirá tu cliente de correo con un borrador prellenado.</span>
-        </div>
-      </form>
-    </div>
-
-    <aside class="notice" aria-live="polite">
-      <strong>Consejos rápidos</strong>
-      <ul>
-        <li>Podemos firmar NDA si lo necesitás.</li>
-        <li>Trabajo con Kotlin, Compose, MVVM, Hilt, Retrofit, Room y CI/CD.</li>
-      </ul>
-    </aside>
-  </div>
-</section>
+        <aside class="notice" aria-live="polite">
+          <strong>Consejos rápidos</strong>
+          <ul>
+            <li>Podemos firmar NDA si lo necesitás.</li>
+            <li>Trabajo con Kotlin, Compose, MVVM, Hilt, Retrofit, Room y CI/CD.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
 
 
   </main>
@@ -267,4 +290,5 @@
 
   <script defer src="main.js"></script>
 </body>
+
 </html>
