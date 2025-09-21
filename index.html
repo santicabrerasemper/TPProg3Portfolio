@@ -51,7 +51,8 @@
           <h1>Hola! Soy <span style="color:var(--primary)">Santiago</span> 👋</h1>
           <p class="lead">Diseño y desarrollo <strong>apps Android nativas</strong> con Kotlin y Jetpack (Compose,
             Navigation, Room), enfocadas en <strong>rendimiento</strong>, <strong>accesibilidad</strong> y una
-            <strong>UX</strong> consistente con Material 3.</p>
+            <strong>UX</strong> consistente con Material 3.
+          </p>
           <div style="display:flex; gap:.6rem; margin-top:1rem">
             <a class="btn primary" href="#redes">Ver redes</a>
             <a class="btn" href="#contacto">Contactarme</a>
@@ -201,7 +202,9 @@
           <h2>Contacto</h2>
           <p class="lead">¿Querés crear o mejorar una <strong>app Android</strong>? Contame un poco y te respondo.</p>
 
-          <form id="contactForm" novalidate>
+          <form id="contactForm" method="POST" novalidate>
+            <input type="text" name="_honey" style="display:none">
+
             <div>
               <label for="name">Nombre</label>
               <input id="name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required>
@@ -266,8 +269,10 @@
 
             <div style="display:flex; gap:.6rem; align-items:center; flex-wrap:wrap">
               <button type="submit" class="btn primary">Enviar</button>
-              <span class="hint">Se abrirá tu cliente de correo con un borrador prellenado.</span>
+              <span class="hint">Tu mensaje se enviará y verás la confirmación acá mismo.</span>
             </div>
+
+            <div id="formStatus" class="hint" aria-live="polite" style="margin-top:.5rem"></div>
           </form>
         </div>
 

@@ -1,7 +1,5 @@
-
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
-
 
 const themeBtn = $('#themeBtn');
 const savedTheme = localStorage.getItem('theme');
@@ -16,7 +14,6 @@ const cycleTheme = () => {
 };
 themeBtn?.addEventListener('click', cycleTheme);
 
-
 const menuToggle = $('#menuToggle');
 const navLinks = $('#navLinks');
 menuToggle?.addEventListener('click', () => {
@@ -26,7 +23,6 @@ menuToggle?.addEventListener('click', () => {
 navLinks?.addEventListener('click', (e) => {
   if (e.target.tagName === 'A') navLinks.classList.remove('open');
 });
-
 
 $$('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -38,7 +34,6 @@ $$('a[href^="#"]').forEach(a => {
   });
 });
 
-
 const linksMap = new Map($$('#navLinks a').map(a => [a.getAttribute('href'), a]));
 const io = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -49,85 +44,47 @@ const io = new IntersectionObserver(entries => {
 }, { rootMargin: '-40% 0px -55% 0px', threshold: [0, .6, 1] });
 $$('main section[id]').forEach(sec => io.observe(sec));
 
-
 $('#year')?.append(new Date().getFullYear());
 
 const form = $('#contactForm');
+const statusEl = $('#formStatus');
 
-const MSG = {
-  name: 'Decime tu nombre.',
-  email: 'Necesito un email válido para poder responderte.',
-  phone: '',
-  projectType: 'Elegí el tipo de proyecto.',
-  timeline: 'Indicá el plazo estimado.',
-  budget: 'Seleccioná un rango de presupuesto.',
-  ref: '',
-  message: 'Contame brevemente tu idea o necesidad.'
-};
-
-Object.keys(MSG).forEach(id => {
-  const el = document.getElementById(id);
-  if (!el) return;
-
-
-  el.addEventListener('invalid', (ev) => {
-    ev.preventDefault();
-    el.setCustomValidity(MSG[id] || '');
-    el.reportValidity();
-  });
-
-  const clear = () => el.setCustomValidity('');
-  el.addEventListener('input', clear);
-  el.addEventListener('change', clear);
-
-  if (id === 'email') {
-    el.addEventListener('input', () => {
-      el.setCustomValidity('');
-      if (el.value && el.validity.typeMismatch) {
-        el.setCustomValidity('El email no parece válido (ej: nombre@dominio.com).');
-      }
-    });
-  }
-});
-
-form?.addEventListener('submit', (e) => {
+form?.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   if (!form.checkValidity()) {
     form.reportValidity();
     return;
   }
+  const btn = form.querySelector('button[type="submit"]');
+  btn?.setAttribute('disabled', '');
+  if (btn) btn.textContent = 'Enviando…';
+  if (statusEl) statusEl.textContent = '';
 
-  const val = id => ($('#' + id)?.value || '').trim();
-  const name = val('name');
-  const email = val('email');
-  const phone = val('phone');
-  const projectType = val('projectType');
-  const timeline = val('timeline');
-  const budget = val('budget');
-  const ref = val('ref');
-  const message = val('message');
+  try {
+    const fd = new FormData(form);
+    fd.append('_captcha', 'false');
+    fd.append('_subject', 'Consulta Android desde el portfolio');
+    fd.append('_template', 'table');
 
-  const to = 'santicabrerasemper8@gmail.com';
-  const subject = encodeURIComponent(`Consulta Android • ${name}`);
+    const resp = await fetch('https://formsubmit.co/ajax/santicabrerasemper8@gmail.com', {
+      method: 'POST',
+      body: fd,
+      headers: { 'Accept': 'application/json' }
+    });
 
-  const body = encodeURIComponent([
-    `Nombre: ${name}`,
-    `Email: ${email}`,
-    phone ? `Teléfono: ${phone}` : null,
-    `Tipo de proyecto: ${projectType}`,
-    `Plazo: ${timeline}`,
-    `Presupuesto: ${budget}`,
-    ref ? `Referencia: ${ref}` : null,
-    '',
-    'Mensaje:',
-    message
-  ].filter(Boolean).join('\n'));
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
 
-  window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-  form.reset();
+    form.reset();
+    if (statusEl) statusEl.textContent = '¡Mensaje enviado! ✅';
+  } catch (err) {
+    if (statusEl) statusEl.textContent = 'Hubo un error al enviar. Probá de nuevo.';
+    console.error(err);
+  } finally {
+    if (btn) {
+      btn.removeAttribute('disabled');
+      btn.textContent = 'Enviar';
+    }
+  }
 });
-
-
-
-
